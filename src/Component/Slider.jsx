@@ -14,6 +14,7 @@ overflow: hidden;
 const Wrapper = styled.div`
  height: 100%;
  display: flex;
+ transition: all 1.5s ease;
  transform: translateX(${(props) => props.slideIndex * -100}vw)
 `;
 const Slide=styled.div`
@@ -21,7 +22,6 @@ width: 100vw;
 height: 100vh;
 display:flex;
 align-items: center;
-transition: all 1.5s ease;
 background-color: #${props=>props.bg};
 `;
 const ImgContainer=styled.div`
