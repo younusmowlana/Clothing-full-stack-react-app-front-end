@@ -1,6 +1,7 @@
 import React from 'react'
 import Announcement from '../Component/Announcement'
 import Navbar from '../Component/Navbar'
+import Slider from '../Component/Slider'
 
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <div>
       <Announcement/>
       <Navbar/>
+      <Slider/>
     </div>
   )
 }
