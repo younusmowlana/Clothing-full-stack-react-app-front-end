@@ -10,7 +10,7 @@ background-color: red;
 const App = () => {
   return (<><Home/>
   
-  <Container>styled</Container>
+  <Container>styl</Container>
   
   </>);
 };
