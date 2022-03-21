@@ -1,7 +1,7 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://thumbs.dreamstime.com/b/beautiful-girl-modehttps://c8.alamy.com/comp/2FTJP91/stunning-feminine-young-woman-in-summer-street-style-clothes-looking-up-confident-full-body-length-isolated-on-white-background-2FTJP91.jpgl-casual-summer-clothes-no-makeup-white-background-portrait-beautiful-girl-model-casual-summer-100630183.jpg",
+      img: "https://st3.depositphotos.com/1273429/12614/i/950/depositphotos_126142330-stock-photo-portrait-of-beautiful-girl-model.jpg",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "#FFFFFF",

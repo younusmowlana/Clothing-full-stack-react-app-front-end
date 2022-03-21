@@ -1,6 +1,6 @@
 import React from 'react'
 import Announcement from '../Component/Announcement'
-import Categories from '../Component/CategoryItem'
+import Categories from '../Component/Categories'
 import Navbar from '../Component/Navbar'
 import Slider from '../Component/Slider'
 

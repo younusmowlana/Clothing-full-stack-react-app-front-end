@@ -88,9 +88,9 @@ function Slider() {
       <Arrow direction="left" onClick={()=>handleclick("left")}>
       <ArrowLeftOutlined/>
       </Arrow>
-        <Wrapper slideIndex={slideIndex}>
+        <Wrapper slideIndex={slideIndex} >
         {sliderItems.map((item) => (
-            <Slide bg={item.bg}>
+            <Slide bg={item.bg} >
             <ImgContainer>
                 <Image src={item.img}/>
             </ImgContainer>

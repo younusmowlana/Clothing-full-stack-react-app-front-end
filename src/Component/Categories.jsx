@@ -6,18 +6,21 @@ const Container = styled.div`
 display: flex;
 padding: 20px;
 justify-content: space-between;
-
 `;
 
-
-const Categories=() => {
-  return 
-    <Container>
+const Categories = () => {
+ console.log(categories)  
+  return  <Container>
       {categories.map(item=>(
           <CategoryItem item={item}/>
       ))}
-    </Container>;
   
+    </Container>;
+    
+    //console.log(categories);
 };
+
+
+
 
 export default Categories
