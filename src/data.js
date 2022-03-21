@@ -1,7 +1,7 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://st3.depositphotos.com/1273429/12614/i/950/depositphotos_126142330-stock-photo-portrait-of-beautiful-girl-model.jpg",
+      img: "https://thumbs.dreamstime.com/b/portrait-fashion-cute-young-girl-model-red-dress-white-background-beautiful-girl-model-casual-summer-clothes-100630197.jpg",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "#FFFFFF",
