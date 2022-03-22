@@ -45,7 +45,7 @@ export const sliderItems = [
     },
     {
       id:2,
-      img:"https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+      img:"https://img01.ztat.net/article/spp-media-p1/a9e33432e4c1347dbe42b6dc08aa470d/b50dbfd6c5f847b5b699cd653c9ef535.jpg?imwidth=762",
     },
     {
       id:3,
@@ -53,7 +53,7 @@ export const sliderItems = [
     },
     {
       id:4,
-      img:"https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
+      img:"https://editorialist.com/thumbnails/600/2021/9/015/884/320/15884320~blue%20multi_0.jpg",
     },
     {
       id:5,
@@ -65,7 +65,7 @@ export const sliderItems = [
     },
     {
       id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://fabletics-us-cdn.justfab.com/media/images/products/JT2044691-0001/JT2044691-0001-1_998x1498.jpg",
     },
     {
       id:8,
