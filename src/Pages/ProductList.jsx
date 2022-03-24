@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import Navbar from '../Component/Navbar'
-import Announcement from "../Component/Announcement";
+import Announcement from "../Component/Announcement"
 import Products from '../Component/Products'
 import Newsletter from '../Component/Newsletter'
 import Footer from '../Component/Footer'
-import { mobile } from "../responsive";
+import { mobile } from "../responsive"
 
 const Container = styled.div``;
 

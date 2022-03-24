@@ -1,11 +1,9 @@
-
-import ProductList from "./Pages/ProductList";
-
-
+import Home  from "./Pages/Home";
+import Product from "./Pages/Product";
 
 const App = () => {
   return (<>
-  <ProductList/>
+  <Home/>
    </>
   );
 };
