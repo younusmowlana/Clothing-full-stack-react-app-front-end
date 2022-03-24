@@ -1,12 +1,10 @@
-import { styled } from "styled-components"
-
-const Container=styled.div``;
+import React from 'react'
 
 const ProductList = () => {
   return (
-    <Container>
+    <div>
       
-    </Container>
+    </div>
   )
 }
 
