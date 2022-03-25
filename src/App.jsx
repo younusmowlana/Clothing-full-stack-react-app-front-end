@@ -1,11 +1,10 @@
-import Home  from "./Pages/Home";
-import Login from "./Pages/Login";
-import Register from "./Pages/Register";
+import Cart from "./Pages/Cart";
+
 
 
 const App = () => {
   return (<>
-  <Login/>
+  <Cart/>
    </>
   );
 };
