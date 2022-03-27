@@ -1,6 +1,7 @@
 import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import React from "react";
+// import axios from "axios";
+// import React,{useEffect,useLayoutEffect,useState} from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -66,7 +67,17 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
+
 const Navbar = () => {
+
+  // const [data, setData] = useState();
+  // console.log(data)
+  // useEffect(async()=>{
+  //   const response =await axios.get('https://jsonplaceholder.typicode.com/posts')
+  //  // console.log(response)
+  //   setData(response.data)
+  //   },[])
+    
   return (
     <Container>
       <Wrapper>
