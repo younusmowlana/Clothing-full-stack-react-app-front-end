@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios'
+import React,{useEffect} from 'react'
 import Announcement from '../Component/Announcement'
 import Categories from '../Component/Categories'
 import Footer from '../Component/Footer'
@@ -9,6 +10,12 @@ import Slider from '../Component/Slider'
 
 
 function Home() {
+  useEffect(async()=>{
+
+    const response =await axios.get("http://localhost:8000/api/test")
+    console.log(response.data)
+
+  },[])
   return (
     <div>
       <Announcement/>
