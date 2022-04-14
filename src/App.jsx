@@ -7,11 +7,9 @@
 // import Login from "./Pages/Login"
 
 const App = () => {
-  return (
-    <Router>
-      {/* <Switch></Switch> */}
-    </Router>
-
+  return (<>
+  <Home/>
+   </>
   );
 };
 
