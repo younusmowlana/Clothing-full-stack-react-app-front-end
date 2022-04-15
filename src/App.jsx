@@ -1,7 +1,15 @@
- import Home  from "./Pages/Home";
-// import Login from "./Pages/Login"
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import Product from "./Pages/Product";
+import Home from "./Pages/Home";
 import ProductList from "./Pages/ProductList";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import Cart from "./Pages/Cart";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 const App = () => {
   return (
@@ -10,8 +18,14 @@ const App = () => {
         <Route exact path="/" >
           <Home/>
         </Route>
-        <Route  path="/products" >
-         <ProductList/>
+        <Route path="/products/:category">
+          <ProductList />
+        </Route>
+        <Route path="/product/:id">
+          <Product />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
       </Switch>
     </Router>
