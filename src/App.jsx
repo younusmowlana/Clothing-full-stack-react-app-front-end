@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 
 const App = () => {
+  const user = true;
   return (
     <Router>
       <Switch>
@@ -30,7 +31,7 @@ const App = () => {
           <Cart />
         </Route>
         <Route path="/login">
-          <Login />
+          {user? <Redirect to="/"/> : <Login/>}  {/*if there is a user we redirect to home page*/}
         </Route>
         <Route path="/register">
           <Register />
