@@ -31,10 +31,10 @@ const App = () => {
           <Cart />
         </Route>
         <Route path="/login">
-          {user? <Redirect to="/"/> : <Login/>}  {/*if there is a user we redirect to home page*/}
+          {user? <Redirect to="/"/> : <Login/>}  {/*if there is a user we redirect to home page if not login*/}
         </Route>
         <Route path="/register">
-          <Register />
+        {user? <Redirect to="/"/> : <Register/>}  {/*if there is a user we redirect to home page, if not register */}
         </Route>
       </Switch>
     </Router>
