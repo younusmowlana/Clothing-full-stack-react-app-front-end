@@ -41,11 +41,13 @@ const Option = styled.option``;
 const ProductList = () => {
   const location = useLocation();
   const cat = location.pathname.split("/") [2];
-  const [filter,setFilters] = useState({})
+  const [filter,setFilters] = useState({});
+  const [sort,setSort] = useState("newst");
 
   const handleFilters = (e) =>{
     const value = e.target.value;
     setFilters({
+      ...filter,
       [e.target.name] : value
     });
   };
@@ -82,10 +84,10 @@ console.log(filter);
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
-          <Select>
-            <Option selected>Newest</Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+          <Select onChange={e=>setSort(e.target.value)}>
+            <Option value="newest">Newest</Option>
+            <Option value="asc">Price (asc)</Option>
+            <Option value="desc">Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>
