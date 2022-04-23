@@ -6,6 +6,8 @@ import Announcement from "../Component/Announcement"
 import Newsletter from '../Component/Newsletter'
 import Footer from '../Component/Footer'
 import { mobile } from "../responsive"
+import { useLocation } from "react-router-dom"
+
 
 
 const Container=styled.div``;
@@ -117,6 +119,9 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
   return (
     <Container>
       <Navbar />
