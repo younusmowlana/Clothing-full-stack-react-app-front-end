@@ -7,6 +7,7 @@ import Newsletter from '../Component/Newsletter'
 import Footer from '../Component/Footer'
 import { mobile } from "../responsive"
 import { useLocation } from "react-router-dom"
+import { useState } from "react"
 
 
 
@@ -121,7 +122,11 @@ const Button = styled.button`
 const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+  
   return (
     <Container>
       <Navbar />
