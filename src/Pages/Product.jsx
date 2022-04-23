@@ -7,7 +7,9 @@ import Newsletter from '../Component/Newsletter'
 import Footer from '../Component/Footer'
 import { mobile } from "../responsive"
 import { useLocation } from "react-router-dom"
-import { useState } from "react"
+import { useState , useEffect } from "react"
+import { publicRequest } from "../requestMethods"
+
 
 
 
@@ -126,14 +128,23 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
-  
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/product/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
           <Title>Denim Jumpsuit</Title>
