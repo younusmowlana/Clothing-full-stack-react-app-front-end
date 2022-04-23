@@ -138,6 +138,8 @@ const Product = () => {
     };
     getProduct();
   }, [id]);
+
+  
   return (
     <Container>
       <Navbar />
