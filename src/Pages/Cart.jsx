@@ -1,4 +1,5 @@
 import { Add, Remove } from "@material-ui/icons"
+import { useSelector } from "react-redux"
 import styled from "styled-components"
 import Announcement from "../Component/Announcement"
 import Footer from '../Component/Footer'
@@ -153,6 +154,9 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+
+  const {quantity,products} = useSelector(state=>state.cart)
+  console.table(products)
   return (
     <Container>
       <Navbar />
@@ -169,7 +173,36 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
+            {
+             products && products.map(item =>(<>
+              <Product>
+              <ProductDetail>
+                <Image src={item.img} />
+                <Details>
+                  <ProductName>
+                    <b>Product:</b> 
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b> {item._id}
+                  </ProductId>
+                  <ProductColor color="black" />
+                  <ProductSize>
+                    <b>Size:</b> {item.size}
+                  </ProductSize>
+                </Details>
+              </ProductDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <Add />
+                  <ProductAmount>{item.quantity}</ProductAmount>
+                  <Remove />
+                </ProductAmountContainer>
+                <ProductPrice>$ {item.price}</ProductPrice>
+              </PriceDetail>
+            </Product>
+              </>))
+            }
+            {/* <Product>
               <ProductDetail>
                 <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
                 <Details>
@@ -219,7 +252,7 @@ const Cart = () => {
                 </ProductAmountContainer>
                 <ProductPrice>$ 20</ProductPrice>
               </PriceDetail>
-            </Product>
+            </Product> */}
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
