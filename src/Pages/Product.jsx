@@ -9,6 +9,10 @@ import { mobile } from "../responsive"
 import { useLocation } from "react-router-dom"
 import { useState , useEffect } from "react"
 import { publicRequest } from "../requestMethods"
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
+// import axios from "axios"
+
 
 
 
@@ -128,6 +132,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -139,6 +144,18 @@ const Product = () => {
     getProduct();
   }, [id]);
 
+  const handleQuantity = (type) => {
+    if(type === "dec"){
+      return quantity>1 && setQuantity(quantity - 1);
+    }else{
+      return setQuantity(quantity + 1);
+    }
+  }
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, color, size })
+    );
+  };
   
   return (
     <Container>
@@ -172,11 +189,11 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={()=>handleQuantity("dec")}/>
+              <Amount>{quantity}</Amount>
+              <Add onClick={()=>handleQuantity("inc")}/>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
