@@ -155,8 +155,8 @@ const Button = styled.button`
 
 const Cart = () => {
 
-  const {quantity,products} = useSelector(state=>state.cart)
-  console.table(products)
+  const cart = useSelector(state=>state.cart)
+  // console.table(products)
   return (
     <Container>
       <Navbar />
@@ -173,35 +173,35 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {
-             products && products.map(item =>(<>
+            { 
+            cart.products.map(product =>(
               <Product>
               <ProductDetail>
-                <Image src={item.img} />
+                <Image src={product.img} />
                 <Details>
                   <ProductName>
-                    <b>Product:</b> 
+                    <b>Product:</b> {product.title}
                   </ProductName>
                   <ProductId>
-                    <b>ID:</b> {item._id}
+                    <b>ID:</b> {product._id}
                   </ProductId>
-                  <ProductColor color="black" />
+                  <ProductColor color={product.color} />
                   <ProductSize>
-                    <b>Size:</b> {item.size}
+                    <b>Size:</b> {product.size}
                   </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                  <ProductAmount>{item.quantity}</ProductAmount>
+                  <ProductAmount>{product.quantity}</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
-                <ProductPrice>$ {item.price}</ProductPrice>
+                <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
               </PriceDetail>
             </Product>
-              </>))
-            }
+           
+           ))}
             {/* <Product>
               <ProductDetail>
                 <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
@@ -258,7 +258,7 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -270,7 +270,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <Button>CHECKOUT NOW</Button>
           </Summary>
