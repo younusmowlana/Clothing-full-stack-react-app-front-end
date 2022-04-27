@@ -156,7 +156,7 @@ const Product = () => {
       addProduct({ ...product, quantity, color, size })
     );
   };
-  console.log(product)
+  // console.log(product)
   return (
 
     <Container>
