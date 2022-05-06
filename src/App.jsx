@@ -34,6 +34,7 @@ const App = () => {
         <Route path="/register">
         {user? <Redirect to="/"/> : <Register/>}  {/*if there is a user we redirect to home page, if not register */}
         </Route>
+        
       </Switch>
     </Router>
   );
