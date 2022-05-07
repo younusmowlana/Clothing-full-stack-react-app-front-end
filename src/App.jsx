@@ -26,11 +26,11 @@ const App = () => {
         <Route path="/product/:id">
           <Product />
         </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
         <Route path="/success">
           <Success />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
         <Route path="/login">
           {user? <Redirect to="/"/> : <Login/>}  {/*if there is a user we redirect to home page if not login*/}
