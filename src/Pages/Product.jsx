@@ -131,7 +131,7 @@ const Product = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState("XS");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -176,7 +176,7 @@ const Product = () => {
           <Filter>
               <FilterTitle>Color</FilterTitle>
               {product.color?.map((c) => (
-                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+                <FilterColor color={c} key={c} onClick={() => setColor(c)}  />
               ))}
             </Filter>
             <Filter>
