@@ -159,20 +159,7 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-const PopupModel = styled.div`
-  position: absolute;
-  //background: rgba(black, 0.5);
-  background-color: black;
-  /* left: 0;
-  right: 0; */
-  width: 90vw;
-  top: 10;
-  bottom: 10;
-  height: 50vh;
 
-
-  z-index: 99999;
-`
 
 const Cart = () => {
 
@@ -180,33 +167,31 @@ const Cart = () => {
 
   const cart = useSelector(state=>state.cart)
   const [stripeToken, setStripeToken] = useState(null);
-  const [popup, setPopup] = useState(false)
   const history = useHistory();
 
   // console.table(products)
   const onToken = (token) => {
     setStripeToken(token);
   };
-  console.log(stripeToken)
+ 
 
   useEffect(() => {
     const makeRequest = async () => {
-      // try {
-      //   const res = await userRequest.post("/checkout/payment", {
-      //     tokenId: stripeToken.id,
-      //     amount: 500,
-      //   });
-      //   console.log("res")
-      //   console.log(res)
-      //  // history.push("/success",{data: res.data});
-      // } catch(e) {
-      //   console.log("error")
-      //   console.log(e)
-      // }
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+       console.log(res)
+       history.push("/success", {data:res.data});
+      } catch {
+        // console.log("error")
+        // console.log(e)
+      }
     };
-    stripeToken && makeRequest();
-  }, [stripeToken, cart.total, history]);
-  // console.log(cart.products)
+   stripeToken && makeRequest();
+  }, [stripeToken, cart.total,history]);
+  
   return (
     <Container>
       <Navbar />
