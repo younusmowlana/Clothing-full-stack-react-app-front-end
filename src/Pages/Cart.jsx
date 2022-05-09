@@ -162,7 +162,7 @@ const Button = styled.button`
 
 
 const Cart = () => {
-const REACT_APP_STRIPE = 'pk_test_51KnJzyDDhDxx13zXwxjWEYj5TpOWMQQniglBBMidCSsmIvoq7IUIcpxYNDeoIgSlD9DFTTm9kknbvAMxEHFc8sqQ00uEzKjSxb'
+// const REACT_APP_STRIPE = 'pk_test_51KnJzyDDhDxx13zXwxjWEYj5TpOWMQQniglBBMidCSsmIvoq7IUIcpxYNDeoIgSlD9DFTTm9kknbvAMxEHFc8sqQ00uEzKjSxb'
   
 
   const cart = useSelector(state=>state.cart)
