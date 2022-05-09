@@ -167,7 +167,7 @@ const REACT_APP_STRIPE = 'pk_test_51KnJzyDDhDxx13zXwxjWEYj5TpOWMQQniglBBMidCSsmI
 
   const cart = useSelector(state=>state.cart)
   const [stripeToken, setStripeToken] = useState(null);
-  console.log(stripeToken)
+
   const history = useHistory();
 
   // console.table(products)
@@ -180,17 +180,15 @@ const REACT_APP_STRIPE = 'pk_test_51KnJzyDDhDxx13zXwxjWEYj5TpOWMQQniglBBMidCSsmI
         tokenId: stripeToken.id,
         amount: 500,
       });
-     console.log("success")
+     console.log("Payment success!")
      history.push("/success", {data:res.data});
-    } catch(e) {
-       console.log("error")
-       console.log(e)
-    }
+    } catch {}
+     
   };
  
 
   useEffect(() => {
-    console.log(stripeToken)
+  
    stripeToken && makeRequest();
   }, [stripeToken, cart.total,history]);
   
