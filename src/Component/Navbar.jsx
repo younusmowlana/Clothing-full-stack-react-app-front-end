@@ -95,10 +95,10 @@ const Navbar = () => {
           <Logo>SHARP.</Logo>
         </Center>
         <Right>
-          <Link to={"/register"}>
+          <Link to={"/register"} style={{ textDecoration: 'none' }}>
           <MenuItem>REGISTER</MenuItem>
           </Link>
-          <Link to={"/login"}>
+          <Link to={"/login"}  style={{ textDecoration: 'none' }}>
           <MenuItem>SIGN IN</MenuItem>
           </Link>
           <MenuItem>
