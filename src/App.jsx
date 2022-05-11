@@ -33,6 +33,9 @@ const App = () => {
         <Route path="/success">
           <Success />
         </Route>
+        <Route path="/product">
+          <ProductList />
+        </Route>
         <Route path="/login">
           {user? <Redirect to="/"/> : <Login/>}  {/*if there is a user we redirect to home page if not login*/}
         </Route>
