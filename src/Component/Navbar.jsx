@@ -95,8 +95,12 @@ const Navbar = () => {
           <Logo>SHARP.</Logo>
         </Center>
         <Right>
+          <Link to={"/register"}>
           <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link to={"/login"}>
           <MenuItem>SIGN IN</MenuItem>
+          </Link>
           <MenuItem>
           <Link to={"/cart"}>
             <Badge badgeContent={quantity} color="primary">
