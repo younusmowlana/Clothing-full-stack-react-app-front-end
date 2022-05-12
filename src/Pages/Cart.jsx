@@ -174,6 +174,7 @@ const Cart = () => {
   const onToken = (token) => {
     setStripeToken(token);
   };
+  useEffect(() => {
   const makeRequest = async () => {
     try {
       const res = await userRequest.post("/checkout/payment", {
@@ -187,7 +188,7 @@ const Cart = () => {
   };
  
 
-  useEffect(() => {
+  
   
    stripeToken && makeRequest();
   }, [stripeToken, cart.total,history]);
