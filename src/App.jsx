@@ -12,9 +12,14 @@ import {
 } from "react-router-dom";
 import Success from "./Pages/Success";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const App = () => {
   const user = useSelector((state)=>state.user.currentUser);
+  console.log(user)
+useEffect(()=>{
+  localStorage.setItem("name","yoonus")
+},[])
   return (
     <Router>
       <Switch>
