@@ -1,5 +1,10 @@
 import { mobile } from "../responsive";
 import styled from 'styled-components'
+import { useState } from "react";
+import { useDispatch, } from "react-redux";
+import { addUser } from "../redux/apiCalls";
+import {useHistory} from 'react-router-dom'
+import axios from "axios";
 
 
 const Container = styled.div`
@@ -56,17 +61,43 @@ const Button = styled.button`
 `;
 
 const Register = () => {
+const [data, setData] = useState({
+  fname:"",
+  lname:"",
+  password:"",
+  username:"",
+  email:""
 
+})
+const dispatch = useDispatch();
+const history = useHistory()
+
+const handleChange = (e)=>{
+  setData({...data, [e.target.name]:e.target.value})
+}
+const handleSubmit = async(e)=>{
+  e.preventDefault()
+
+ const response = await axios.post("http://localhost:5000/api/auth/register",data)
+ localStorage.setItem("currentUser",JSON.stringify(response.data))
+history.push("/")
+console.log(response)
+  console.log("data")
+  console.log(data)
+  //alert(JSON.stringify(data))
+  //addUser(dispatch() , data)
+
+}
   return (
     <Container>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input type={"password"} placeholder="password" />
+        <Form onSubmit={(e)=>handleSubmit(e)}>
+          <Input placeholder="name" name="fname" onChange={(e)=>handleChange(e)} />
+          <Input placeholder="last name" name="lname"onChange={(e)=>handleChange(e)} />
+          <Input placeholder="username" name="username" onChange={(e)=>handleChange(e)}/>
+          <Input placeholder="email" name="email"onChange={(e)=>handleChange(e)} />
+          <Input type={"password"} placeholder="password" name="password" onChange={(e)=>handleChange(e)}/>
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
