@@ -1,8 +1,6 @@
 import { mobile } from "../responsive";
 import styled from 'styled-components'
 import { useState } from "react";
-import { useDispatch, } from "react-redux";
-import { addUser } from "../redux/apiCalls";
 import {useHistory} from 'react-router-dom'
 import axios from "axios";
 
@@ -69,7 +67,7 @@ const [data, setData] = useState({
   email:""
 
 })
-const dispatch = useDispatch();
+
 const history = useHistory()
 
 const handleChange = (e)=>{
