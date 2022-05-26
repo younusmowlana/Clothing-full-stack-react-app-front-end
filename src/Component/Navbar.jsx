@@ -5,7 +5,8 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
+import {useState,useEffect} from 'react'
 // import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -72,8 +73,17 @@ const MenuItem = styled.div`
 
 
 const Navbar = () => {
+const history = useHistory()
 
-  // const [data, setData] = useState();
+
+   const [data, setData] = useState(null);
+
+   useEffect(()=>{
+     const data = JSON.parse(localStorage.getItem("currentUser"))
+     console.log("data")
+     console.log(data)
+     setData(data)
+   },[])
   // console.log(data)
   // useEffect(async()=>{
   //   const response =await axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -95,12 +105,25 @@ const Navbar = () => {
           <Logo>SHARP.</Logo>
         </Center>
         <Right>
-          <Link to={"/register"} style={{ textDecoration: 'none' }}>
+          { data === null ? (<>
+            <Link to={"/register"} style={{ textDecoration: 'none' }}>
           <MenuItem>REGISTER</MenuItem>
           </Link>
           <Link to={"/login"}  style={{ textDecoration: 'none' }}>
           <MenuItem>SIGN IN</MenuItem>
           </Link>
+          </>) : (<>
+            {/* <Link to={"/register"} style={{ textDecoration: 'none' }}>
+          <MenuItem>REGISTER</MenuItem>
+          </Link> */}
+          {/* <Link to={"/login"}  style={{ textDecoration: 'none' }}> */}
+          <MenuItem onClick={()=>{
+            localStorage.clear()
+            history.push("/login")
+          }}>LOGOUT</MenuItem>
+          <MenuItem>{data.username}</MenuItem>
+          
+          </>)}
           <MenuItem>
           <Link to={"/cart"}>
             <Badge badgeContent={quantity} color="primary">
