@@ -163,36 +163,28 @@ const Button = styled.button`
 
 
 const Cart = () => {
-// const REACT_APP_STRIPE = 'pk_test_51KnJzyDDhDxx13zXwxjWEYj5TpOWMQQniglBBMidCSsmIvoq7IUIcpxYNDeoIgSlD9DFTTm9kknbvAMxEHFc8sqQ00uEzKjSxb'
-  
-
-  const cart = useSelector(state=>state.cart)
+  const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
-
   const history = useHistory();
 
-  // console.table(products)
   const onToken = (token) => {
     setStripeToken(token);
   };
-  useEffect(() => {
-  const makeRequest = async () => {
-    try {
-      const res = await userRequest.post("/checkout/payment", {
-        tokenId: stripeToken.id,
-        amount: 500,
-      });
-     console.log("Payment success!")
-     history.push("/success", {data:res.data});
-    } catch {}
-     
-  };
- 
 
-  
-  
-   stripeToken && makeRequest();
-  }, [stripeToken, cart.total,history]);
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        history.push("/success", {
+          stripeData: res.data,
+          products: cart, });
+      } catch {}
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total, history]);
   
   return (
     <Container>
