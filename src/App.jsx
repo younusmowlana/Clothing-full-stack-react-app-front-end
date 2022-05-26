@@ -16,9 +16,11 @@ import { useEffect } from "react";
 
 const App = () => {
   const user = useSelector((state)=>state.user.currentUser);
-  console.log(user)
+  //console.log(user)
 useEffect(()=>{
-  localStorage.setItem("name","yoonus")
+  //localStorage.setItem("kotta","yoonus")
+
+  localStorage.clear()
 },[])
   return (
     <Router>
