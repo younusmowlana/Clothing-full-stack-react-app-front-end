@@ -80,8 +80,6 @@ const history = useHistory()
 
    useEffect(()=>{
      const data = JSON.parse(localStorage.getItem("currentUser"))
-     console.log("data")
-     console.log(data)
      setData(data)
    },[])
   // console.log(data)
