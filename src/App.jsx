@@ -19,7 +19,7 @@ const App = () => {
   //console.log(user)
 useEffect(()=>{
   //localStorage.setItem("kotta","yoonus")
-
+console.log(user)
   localStorage.clear()
 },[])
   return (
