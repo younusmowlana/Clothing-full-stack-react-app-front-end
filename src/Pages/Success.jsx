@@ -14,7 +14,7 @@ const Success = () => {
   useEffect(() => {
     const createOrder = async () => {
       try {
-        const res = await userRequest.post("/order", {
+        const res = await userRequest.post("/orders", {
           userId: currentUser._id,
           products: cart.products.map((item) => ({
             productId: item._id,
@@ -28,7 +28,7 @@ const Success = () => {
     };
     data && createOrder();
   }, [cart, data, currentUser]);
-
+  console.log(currentUser)
   return (
     <div
       style={{
