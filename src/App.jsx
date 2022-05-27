@@ -16,9 +16,10 @@ import { useEffect } from "react";
 
 const App = () => {
   const user = useSelector((state)=>state.user.currentUser);
+  // const user = true;
   //console.log(user)
 useEffect(()=>{
-  //localStorage.setItem("kotta","yoonus")
+  
 
   localStorage.clear()
 },[])
