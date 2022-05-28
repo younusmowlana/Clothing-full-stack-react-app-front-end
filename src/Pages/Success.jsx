@@ -28,7 +28,10 @@ const Success = () => {
     };
     data && createOrder();
   }, [cart, data, currentUser]);
-  console.log(currentUser)
+  // console.log(currentUser)
+  // console.log(data)
+  // console.log(cart)
+  
   return (
     <div
       style={{
