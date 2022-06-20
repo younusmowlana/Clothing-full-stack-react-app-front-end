@@ -1,4 +1,3 @@
-
 import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
 import Navbar from '../Component/Navbar'
@@ -12,10 +11,6 @@ import { publicRequest } from "../requestMethods"
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 // import axios from "axios"
-
-
-
-
 
 const Container=styled.div``;
 
